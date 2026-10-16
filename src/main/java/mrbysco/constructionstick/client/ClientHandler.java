@@ -8,7 +8,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.RegisterSelectItemModelPropertyEvent;
 
-@EventBusSubscriber(Dist.CLIENT)
+@EventBusSubscriber(modid = "constructionstick", value = Dist.CLIENT) // Fleet: explicit modid (multi-mod jar in AE Compendium)
 public class ClientHandler {
 
 	@SubscribeEvent

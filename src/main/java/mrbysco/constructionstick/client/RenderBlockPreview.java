@@ -27,7 +27,7 @@ import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 import java.util.Set;
 
-@EventBusSubscriber(Dist.CLIENT)
+@EventBusSubscriber(modid = "constructionstick", value = Dist.CLIENT) // Fleet: explicit modid (multi-mod jar in AE Compendium)
 public class RenderBlockPreview {
 	public static Set<BlockPos> undoBlocks;
 	public static Set<BlockPos> previewBlocks;

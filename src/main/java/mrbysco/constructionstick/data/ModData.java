@@ -16,7 +16,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber
+@EventBusSubscriber(modid = "constructionstick") // Fleet: explicit modid (multi-mod jar in AE Compendium)
 public class ModData {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent.Client event) {

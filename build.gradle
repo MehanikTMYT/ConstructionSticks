@@ -92,6 +92,7 @@ configurations {
 }
 
 repositories {
+    mavenLocal() // EMI 26.1.2 fleet build
     maven {
         url = "https://maven.blamejared.com"
     }
@@ -112,15 +113,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
-    compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"
-
-    localRuntime "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
-
-//    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
-//    localRuntime "dev.emi:emi-neoforge:${emi_version}"
+    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
+    localRuntime "dev.emi:emi-neoforge:${emi_version}"
     compileOnly "curse.maven:sophisticated-core-618298:${sophisticated_core}"
     localRuntime "curse.maven:sophisticated-core-618298:${sophisticated_core}"
+    compileOnly "curse.maven:sophisticated-backpacks-422301:${sophisticated_backpacks}"
     localRuntime "curse.maven:sophisticated-backpacks-422301:${sophisticated_backpacks}"
 }
 
@@ -148,6 +145,7 @@ publishing {
         }
     }
     repositories {
+    mavenLocal() // EMI 26.1.2 fleet build
         if (System.getenv().SAP_SECRET) {
             maven {
                 url "https://maven.saps.dev/releases"
@@ -174,8 +172,7 @@ if (System.getenv().CURSEFORGE_KEY) {
         mainFile.changelog = file("$project.rootDir/changelog.md")
         mainFile.changelogType = 'markdown'
 
-        mainFile.addOptional("jei")
-//        mainFile.addOptional("emi")
+        mainFile.addOptional("emi")
     }
 }
 
@@ -192,8 +189,7 @@ if (System.getenv().MODRINTH_KEY) {
         loaders = ["neoforge"]
 
         dependencies {
-            optional.project "jei"
-//            optional.project "emi"
+            optional.project "emi"
         }
     }
 }

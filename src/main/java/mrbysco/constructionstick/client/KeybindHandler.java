@@ -17,7 +17,7 @@ import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.lwjgl.glfw.GLFW;
 
-@EventBusSubscriber(Dist.CLIENT)
+@EventBusSubscriber(modid = "constructionstick", value = Dist.CLIENT) // Fleet: explicit modid (multi-mod jar in AE Compendium)
 public class KeybindHandler {
 	public static KeyMapping.Category CATEGORY = new KeyMapping.Category(ConstructionStick.modLoc("category"));
 	public static final KeyMapping KEY_CHANGE_RESTRICTION = new KeyMapping(getKey("change_restriction"), GLFW.GLFW_KEY_UNKNOWN, CATEGORY);
