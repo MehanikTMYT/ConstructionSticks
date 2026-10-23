@@ -1,1 +1,2 @@
-* Disable the swap animation on Construction Sticks which has the battery upgrade. Charging the Construction Stick will no longer cause the swap animation to play.
+* Add `constructionsticks:blacklisted_inventories` item tag. Any item in there will not be checked for contents.
+* Add Sophisticated Backpacks to the blacklist tag (temporarily) until I can figure out a fix for high memory usage
